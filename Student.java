@@ -1,30 +1,34 @@
-package com.pojoPackage;
+package com.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Student {
 
+	@Id
 	private int sid;
 	private String sname;
-	private String scity;
-	
-	
-	public Student(int sid, String sname, String scity) {
+	private int age;
+	private String city;
+
+	public Student() {
+
+	}
+
+	public Student(int sid, String sname, int age, String city) {
+		super();
 		this.sid = sid;
 		this.sname = sname;
-		this.scity = scity;
+		this.age = age;
+		this.city = city;
 	}
 
-	
-	public Student() {
-		
-	}
-
-	
 	@Override
 	public String toString() {
-		return "Student [sid=" + sid + ", sname=" + sname + ", scity=" + scity + "]";
+		return "Student [sid=" + sid + ", sname=" + sname + ", age=" + age + ", city=" + city + "]";
 	}
 
-	
 	public int getSid() {
 		return sid;
 	}
@@ -41,14 +45,20 @@ public class Student {
 		this.sname = sname;
 	}
 
-	public String getScity() {
-		return scity;
+	public int getAge() {
+		return age;
 	}
 
-	public void setScity(String scity) {
-		this.scity = scity;
+	public void setAge(int age) {
+		this.age = age;
 	}
-	
-	
-	
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
 }
